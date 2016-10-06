@@ -1,6 +1,7 @@
 const cloudinary = require('cloudinary');
 const env = require('env2');
 const fs = require('fs');
+const imageList = require('./images.json')
 
 env('config.env');
 
@@ -30,7 +31,8 @@ fs.readdir(process.env.LOCAL_PATH, (err, files) => {
 })
 
 var write = (array) => {
-    fs.writeFile('images.JSON', JSON.stringify(array, null, 2), 'utf8', (err) => {
+
+    fs.writeFile('images.json', JSON.stringify(array, null, 2), 'utf8', (err) => {
         if (err) throw err;
         console.log('It\'s saved!');
     });
