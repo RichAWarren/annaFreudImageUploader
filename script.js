@@ -65,6 +65,7 @@ const apiRequest = (array, index, endArray, result, endObject) => {
     });
 }
 
+//find the images that are not in the origin set
 const findNewImages = (data, array) => {
     let oldArray = Object.keys(data)
     let newPhotos = array.filter((el) => {
@@ -73,6 +74,7 @@ const findNewImages = (data, array) => {
     return newPhotos
 }
 
+//remove .jpg etc
 const cleanFilenames = (array) => {
     var tarray = []
     for(i = 0; i < array.length; i++) {
